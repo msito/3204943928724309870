@@ -96,10 +96,6 @@
                 margin:auto;
             }
 
-            #results .imageobjectinfo .roverdetails{
-                display:none;
-            }
-
             #results .imageobjectinfo .roverimage{
                 border:1px solid #cccccc;
                 padding:10px;
@@ -111,7 +107,17 @@
                 width:100px;
                 float:left;
                 height:100px;
+                padding-right:10px;
             }        
+            
+            #results .imageobjectinfo .roverimage .camera_name{
+                width:100px;
+                float:right;
+                height:100px;
+                padding-right:10px;
+                font-size:10px;
+            }        
+            
 
             #pager{
                 border:1px solid #cccccc;
@@ -134,7 +140,7 @@
             }
 
         </style>
-        <!--script src="javascript/jquery.min.js"></script-->
+
         <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 
 <script>
@@ -359,14 +365,11 @@
                 text += '    <a href="' + this.img_src + '">' + line_sep;
                 text += '      <img class="thumbimage" src="' + this.thum_img + '" alt="Image from ' + this.camera_fullname + '"/>' + line_sep;
                 text += '    </a>' + line_sep;
-                text += '  </div>' + line_sep;
-                text += '  <div class="roverdetails">' + line_sep;
-                text += '    <div class="lable">Camera</div>';
-                text += '    <div class="value">' + this.camera_fullname + '</div>';
-                text += '    <div class="label">Sol (Martian rotation or day): </div>' + line_sep;
-                text += '    <div class="value">' + this.sol + '</div>' + line_sep;
-                text += '    <div class="label">Earth Date</div>' + line_sep;
-                text += '    <div class="value">' + this.earth_date + '</div>' + line_sep;
+                text += '    <div class="camera_name">' + line_sep;
+                text += '        Camera: ' + this.camera_fullname + '<br />' + line_sep;
+                text += '        Sol: ' + this.sol + '<br />' + line_sep;
+                text += '        Earth Date: ' + this.earth_date + '<br />' + line_sep;
+                text += '    </div>' + line_sep;
                 text += '  </div>' + line_sep;
                 text += '</div>' + line_sep;
                 text += '</div>' + line_sep;
